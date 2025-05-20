@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #1d2b64, #f8cdda);
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 320px;
+  height: 420px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  padding: 2rem;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #009688;
+  margin-bottom: 1rem;
+  transform: translateZ(50px);
+}
+
+.card h1 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  transform: translateZ(30px);
+}
+
+.card p {
+  color: #555;
+  transform: translateZ(20px);
+}
