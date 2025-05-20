@@ -1,4 +1,7 @@
-/* style.css */
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,20 +10,42 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #222;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  background-image: none;
+  color: #eee;
+}
+
+/* Dark mode card */
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 80px 20px 40px;
+  width: 100%;
+  text-align: center;
 }
 
 .card {
-  text-align: center;
-  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+  perspective: 1000px;
 }
 
 .profile-pic {
@@ -28,55 +53,125 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
+  border: 5px solid #ddd;
+  transition: border-color 0.5s ease;
+}
+
+body.dark-mode .profile-pic {
+  border-color: #555;
+}
+
+h1 {
+  margin: 10px 0 5px;
+  font-size: 2rem;
 }
 
 .role, .aspire {
-  margin: 0.3rem 0;
-  font-size: 1.1rem;
+  margin: 5px 0;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.5s ease;
+}
+
+body.dark-mode .role,
+body.dark-mode .aspire {
+  color: #bbb;
 }
 
 .resume-btn {
   display: inline-block;
-  margin: 1rem auto;
-  padding: 0.5rem 1rem;
-  background-color: #0073e6;
+  margin: 20px 0;
+  padding: 10px 25px;
+  background: #0078d7;
   color: white;
+  border-radius: 50px;
   text-decoration: none;
-  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: #005fa3;
 }
 
 .social-links a {
   margin: 0 10px;
+  color: #0078d7;
   text-decoration: none;
-  color: #0073e6;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #005fa3;
 }
 
 .contact {
-  text-align: center;
-  margin-top: 2rem;
+  background: rgba(255,255,255,0.85);
+  padding: 25px 20px;
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+body.dark-mode .contact {
+  background-color: #222;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.1);
 }
 
-.contact input,
-.contact textarea {
-  width: 80%;
-  padding: 0.7rem;
-  border-radius: 5px;
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contact input:focus, .contact textarea:focus {
+  border-color: #0078d7;
+  outline: none;
 }
 
 .contact button {
-  padding: 0.6rem 1.2rem;
-  background-color: #28a745;
-  color: white;
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
+  background-color: #0078d7;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #005fa3;
+}
+
+/* Dark mode toggle button */
+.dark-toggle-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #0078d7;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.dark-toggle-btn:hover {
+  background-color: #005fa3;
 }
