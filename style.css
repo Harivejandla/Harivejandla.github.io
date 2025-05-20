@@ -1,7 +1,21 @@
-body {
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Background image */
+.background {
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .container {
@@ -12,14 +26,13 @@ body {
 }
 
 .card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transform: perspective(1000px);
-  transition: transform 0.2s ease;
-  width: 300px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  width: 300px;
+  margin-bottom: 2rem;
 }
 
 .profile-pic {
@@ -32,12 +45,12 @@ body {
 
 .role, .aspire {
   font-size: 1rem;
-  color: #555;
+  color: #333;
 }
 
 .resume-btn {
   display: inline-block;
-  background: #ff9800;
+  background: #007bff;
   color: white;
   padding: 0.6rem 1rem;
   margin: 1rem 0;
@@ -48,63 +61,49 @@ body {
 
 .social-links a {
   margin: 0 10px;
-  color: #009688;
+  color: #00796b;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .contact {
-  margin-top: 2rem;
-  background: #fff;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  text-align: center;
   width: 100%;
   max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .contact h2 {
+  color: #222;
   margin-bottom: 1rem;
-  color: #333;
 }
 
 .contact form {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 1rem;
 }
 
-.contact input,
-.contact textarea {
-  padding: 0.7rem;
+.contact input, .contact textarea {
+  padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
 }
 
 .contact button {
-  background-color: #009688;
+  background: #009688;
   color: white;
-  padding: 0.7rem;
   border: none;
+  padding: 0.8rem;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .card {
-    width: 90%;
-    height: auto;
-  }
-
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-  }
-
-  .contact {
-    padding: 1rem;
-  }
+    width: 90%;
+  }
 }
