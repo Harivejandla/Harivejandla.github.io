@@ -1,51 +1,110 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to right, #1d2b64, #f8cdda);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
 }
 
 .container {
-  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
 
 .card {
-  width: 320px;
-  height: 420px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  background: #fff;
   padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: perspective(1000px);
+  transition: transform 0.2s ease;
+  width: 300px;
   text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease;
 }
 
 .profile-pic {
   width: 120px;
   height: 120px;
-  object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #009688;
+  object-fit: cover;
   margin-bottom: 1rem;
-  transform: translateZ(50px);
 }
 
-.card h1 {
-  margin-bottom: 0.5rem;
-  color: #333;
-  transform: translateZ(30px);
-}
-
-.card p {
+.role, .aspire {
+  font-size: 1rem;
   color: #555;
-  transform: translateZ(20px);
+}
+
+.resume-btn {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #009688;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact button {
+  background-color: #009688;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact {
+    padding: 1rem;
+  }
 }
