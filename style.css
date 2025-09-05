@@ -79,7 +79,7 @@ body.dark-mode .aspire {
   color: #bbb;
 }
 
-.resume-btn {
+.Resume-btn {
   display: inline-block;
   margin: 20px 0;
   padding: 10px 25px;
@@ -91,7 +91,7 @@ body.dark-mode .aspire {
   transition: background-color 0.3s ease;
 }
 
-.resume-btn:hover {
+.Resume-btn:hover {
   background: #005fa3;
 }
 
@@ -175,3 +175,4 @@ body.dark-mode .contact {
 .dark-toggle-btn:hover {
   background-color: #005fa3;
 }
+
